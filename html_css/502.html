@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang=en translate=no>
+<head>
+  <meta charset=UTF-8>
+  <meta name=viewport content=width=[widest centered div], initial-scale=1.0, user-scalable=yes>
+  <meta name=google value=notranslate>
+  <title>502 Bad Gateway</title>
+<style>
+html {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  margin: 0;
+}
+
+.bg {
+  animation: slide 13s ease-in-out infinite alternate;
+  background-image: linear-gradient(-45deg, #FFFFFF 50%, #8931FF 50%);
+  bottom: 0;
+  left: -50%;
+  opacity: .5;
+  position: fixed;
+  right: -50%;
+  top: 0;
+  z-index: -1;
+}
+
+.bg2 {
+  animation-direction: alternate-reverse;
+  animation-duration: 12s;
+}
+
+.bg3 {
+  animation-duration: 14s;
+}
+
+.content {
+  background-color: rgba(255,255,255,.5);
+  border-radius: .25em;
+  box-shadow: 0 0 .25em rgba(0,0,0,.25);
+  box-sizing: border-box;
+  left: 50%;
+  padding: 5vmin;
+  position: fixed;
+  text-align: center;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  border: 3px solid #000000;
+}
+  
+.title {
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: auto;
+  margin-bottom: auto;
+  width: auto;
+  height: auto;
+  border-radius: 5px;
+  background-color: #f0f0f0;
+  color: #000000;
+  font-size: 20px;
+  padding: 20px;
+  border: 3px solid #000000;
+}
+
+h1, h2, h3 {
+  font-family: monospace;
+  color: #000000;
+}
+
+button, input[type=button] {
+  background-color: #f0f0f0;
+  border-color: #000000;
+  color: #000000;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 20px;
+  margin: 4px 2px; 
+  cursor: pointer;
+  border: 3px solid #000000;
+}
+
+@keyframes slide {
+  0% {
+    transform: translateX(-25%);
+  }
+  100% {
+    transform: translateX(25%);
+  }
+}
+</style>
+</head>
+<body>
+<div class="bg"></div>
+<div class="bg bg2"></div>
+<div class="bg bg3"></div>
+<div class="content">
+  <div class="title">
+    <br>
+    <h3>502 Bad Gateway</h3>
+    <br>
+    <h3>Maintenance Work Being Done</h3>
+    <br>
+  </div>
+  <br>
+  <div>
+    <input type="button" value="Return to Main Menu" onclick="window.location.href='https://' + location.hostname"/>
+  </div>
+</div>
+</body>
+</html>
