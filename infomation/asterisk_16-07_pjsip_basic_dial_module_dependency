@@ -1,0 +1,38 @@
+  _______________________________
+ |                               |
+ | Modules with no dependencys = |
+ |                               |
+ | app_dial.so                   |
+ | bridge_simple.so              |
+ | pbx_config.so                 |
+ |_______________________________|
+
+                chan_pjsip.so                         res_pjsip_sdp_rtp.so
+           ___________|___________                _____________|_____________
+          |                       |              |             |             |
+     (dependency)            (dependency)   (dependency)  (dependency)  (dependency)
+          |                       |              |             |             |
+          V                       V              V             |             V
+ res_pjsip_pubsub.so            res_pjsip_session.so           |     res_rtp_asterisk.so
+          |_______________________|       |                    |             |
+                      |              (dependency)              |        (dependency)
+                 (dependency)             |                    |             |
+                      |                   V                    |             V
+                      |         res_sorcery_memory.so          |      res_pjproject.so
+                      |      (Loaded before res_pjsip.so)      |
+                      |    ____________________________________|
+                      |   |
+                      V   V
+                  res_pjsip.so
+
+load=app_dial.so
+load=bridge_simple.so     
+load=pbx_config.so 
+load=chan_pjsip.so
+load=res_pjsip_sdp_rtp.so
+load=res_pjsip_pubsub.so
+load=res_pjsip_session.so
+load=res_rtp_asterisk.so
+load=res_sorcery_memory.so
+load=res_pjproject.so
+load=res_pjsip.so
