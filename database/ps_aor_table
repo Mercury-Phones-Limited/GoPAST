@@ -10,6 +10,7 @@ CREATE TABLE `ps_aor` (
 `max_contacts`          TINYINT(3) UNSIGNED,
 `minimum_expiration`    SMALLINT(5) UNSIGNED,
 `remove_existing`       ENUM('yes','no') NOT NULL,
+`remove_unavailable`    ENUM('no','yes') NOT NULL,
 `qualify_frequency`     SMALLINT(5) UNSIGNED,
 `qualify_timeout`       DECIMAL(3,2),
 `authenticate_qualify`  ENUM('no','yes'),
