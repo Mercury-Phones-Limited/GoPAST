@@ -1,7 +1,7 @@
 CREATE TABLE `ps_contact` (
 
-`id`                    varchar(200),
-`uri`	                VARCHAR(100),
+`id`                    VARCHAR(200),
+`uri`                   VARCHAR(100),
 `expiration_time`       VARCHAR(20),
 `qualify_frequency`     SMALLINT(5) UNSIGNED,
 `qualify_timeout`       DECIMAL(3,2),
@@ -13,7 +13,7 @@ CREATE TABLE `ps_contact` (
 `reg_server`            VARCHAR(100),
 `via_addr`              VARCHAR(100),
 `via_port`              SMALLINT(5) UNSIGNED,
-`call_id`               varchar(200),
+`call_id`               VARCHAR(200),
 `prune_on_boot`         ENUM('no','yes'),
 PRIMARY KEY(`id`)
 )
