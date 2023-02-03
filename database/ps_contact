@@ -1,7 +1,7 @@
 CREATE TABLE `ps_contact` (
 
 `id`                    varchar(200),
-`uri`	                  VARCHAR(100),
+`uri`	                VARCHAR(100),
 `expiration_time`       VARCHAR(20),
 `qualify_frequency`     SMALLINT(5) UNSIGNED,
 `qualify_timeout`       DECIMAL(3,2),
