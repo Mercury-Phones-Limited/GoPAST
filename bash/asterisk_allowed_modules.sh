@@ -118,6 +118,7 @@ chgrp asterisk $path/res_pjsip_sdp_rtp.so;                       # PJSIP SDP RTP
 chgrp asterisk $path/res_pjsip_session.so;                       # PJSIP Session resource. 
 
 chgrp asterisk $path/res_rtp_asterisk.so;     # Asterisk RTP Stack.
+chgrp asterisk $path/res_srtp.so;             # Secure RTP (SRTP).
 
 chgrp asterisk $path/res_sorcery_astdb.so;    # Sorcery Astdb Object Wizard. 
 chgrp asterisk $path/res_sorcery_config.so;   # Sorcery Configuration File Object Wizard.
