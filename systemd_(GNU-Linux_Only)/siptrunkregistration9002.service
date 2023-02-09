@@ -1,0 +1,10 @@
+[Unit]
+Description=siptrunkregistration9002
+
+[Service]
+User=root
+Type=simple
+ExecStart=/usr/local/bin/siptrunkregistration9002
+
+[Install]
+WantedBy=multi-user.target
