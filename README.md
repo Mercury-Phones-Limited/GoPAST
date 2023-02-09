@@ -30,8 +30,10 @@
 
 <br>
 
-## In this repository if a directory is appended with Debian or FreeBSD it means the files inside are speficaly for that OS. Some files are also appended with Debian or FreeBSD to distinguise between what OS there for.
+### In this repository if a directory is appended with Debian or FreeBSD it means the files inside are speficaly for that OS. Some files are also appended with Debian or FreeBSD to distinguise between what OS there for.
 
-## Some 
+### If a directory or file in this repository does not have FreeBSD or Debian appended to its name then it means it can be used on either OS.
+
+<br>
 
 For abbreviations and there meanings used throughout this repository please refer to the README at - https://github.com/Ellwould/information_technology_and_telecommunication_abbreviations
