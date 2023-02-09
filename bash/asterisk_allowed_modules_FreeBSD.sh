@@ -1,14 +1,15 @@
 #!/usr/local/bin/bash
-path=/usr/local/lib/asterisk/modules
-chgrp asterisk /usr/local/lib/asterisk
-chown root /usr/local/lib/asterisk
-chmod 550 /usr/local/lib/asterisk
-chgrp asterisk $path
-chown root $path
-chmod 550 $path
-chgrp wheel $path/*
-chown root $path/*
-chmod 440 $path/*
+
+path=/usr/local/lib/asterisk/modules;
+chgrp asterisk /usr/local/lib/asterisk;
+chown root /usr/local/lib/asterisk;
+chmod 550 /usr/local/lib/asterisk;
+chgrp asterisk $path;
+chown root $path;
+chmod 550 $path;
+chgrp wheel $path/*;
+chown root $path/*;
+chmod 440 $path/*;
 
 ###############
 # App modules #
