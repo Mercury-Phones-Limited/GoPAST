@@ -6,11 +6,11 @@
 
 <br>
 
-## GoFAST is a VoIP server that runs on FreeBSD, uses Asterisk as its SIP server and Go to provide a web interface. For uses who run Debian OS GNU/Linux versions of the files will be added as well.
+### GoFAST is a VoIP server that runs on FreeBSD, uses Asterisk as its SIP server and Go to provide a web interface. For uses who run Debian OS GNU/Linux versions of the files will be added as well.
 
 <br>
 
-## The GoFAST projects goal is to make a stable and minimalist SIP Trunk server that can be easly managed by a web interface.
+### The GoFAST projects goal is to make a stable and minimalist SIP Trunk server that can be easly managed by a web interface.
 
 <br>
 
