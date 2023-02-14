@@ -24,4 +24,4 @@ certbot certonly --manual --key-type=ecdsa --elliptic-curve secp384r1 --preferre
 
 --------------------------------------------------
 
-3) You will need access to your domain names records to make temporay TXT record(s) for Let's Encrypt to validate it is your domain name.
+3) You will need access to your domain names records to make temporary TXT record(s) for Let's Encrypt to validate it is your domain name.
