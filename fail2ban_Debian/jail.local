@@ -1,0 +1,30 @@
+# This is not a complete jail.local file, just the options added in that are needed.
+
+[DEFAULT]
+
+banaction = nftables-multiport
+chain = sip-input
+
+#
+# Jails
+#
+
+[asterisk]
+
+enabled = true
+port= 5060,5061
+
+action_  = %(default/action_)s[name=%(__name__)s-tcp, protocol="tcp"]
+         = %(default/action_)s[name=%(__name__)s-udp, protocol="udp"]
+
+logpath  = /var/log/asterisk/messages
+
+maxretry = 5
+
+# "bantime" is the number of seconds that a host is banned.
+bantime = 172800
+
+# A host is banned if it has generated "maxretry" during the last "findtime"
+# seconds.
+
+findtime  = 1200
