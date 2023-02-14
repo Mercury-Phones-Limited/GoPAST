@@ -1,0 +1,27 @@
+1) Install the latest version of Certbot:
+
+FreeBSD -
+
+- pkg install py39-certbot
+
+--------------------------------------------------
+
+Debian - 
+
+- sudo apt install snapd
+- sudo snap install core
+- sudo snap refresh core
+- sudo snap install --classic certbot
+- sudo ln -s /snap/bin/certbot /usr/bin/certbot
+
+--------------------------------------------------
+
+2) Use certbot to get ECDSA certificate, key and chain pem files:
+
+# Check on Let's Encrypts website that the --server argument still uses "https://acme-v02.api.letsencrypt.org/directory" as its value.
+
+certbot certonly --manual --key-type=ecdsa --elliptic-curve secp384r1 --preferred-challenges=dns --server https://acme-v02.api.letsencrypt.org/directory
+
+--------------------------------------------------
+
+3) You will need access to your domain names records to make temporay TXT record(s) for Let's Encrypt to validate it is your domain name.
