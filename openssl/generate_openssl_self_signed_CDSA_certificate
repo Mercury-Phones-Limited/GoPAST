@@ -1,0 +1,53 @@
+FreeBSD and Debian should have OpenSSL installed already by default.
+
+The self signed server certificate (DBserver.crt), key (DBserver.key) and certificate authority certificate (ca.crt) will be used for the MariaDB database.
+
+The most secure thing to do is keep the ca.key file on a seprate machine away from the MariaDB server.
+
+The MariaDB server only needs the DBserver.crt, DBserver.key and ca.crt files.
+
+----------------------------------------------------------------------------------------------------
+
+1) Generate a self signed certificate authority key:
+
+openssl ecparam -genkey -name secp384r1 -out ca.key
+
+----------------------------------------------------------------------------------------------------
+
+2) Generate a self signed certificate authority certificate with expiry of 20 years (7300 days, though this encryption method will without a doubt be useless by then):
+
+openssl req -x509 -new -SHA384 -nodes -key ca.key -days 7300 -out ca.crt
+
+----------------------------------------------------------------------------------------------------
+
+3) Generate a self signed certificate for the MariaDB server:
+
+openssl ecparam -genkey -name secp384r1 -out DBserver.key
+
+----------------------------------------------------------------------------------------------------
+
+4) Generate a CSR (Certificate Signing Request):
+
+openssl req -new -SHA384 -key DBserver.key -nodes -out DBserver.csr
+
+----------------------------------------------------------------------------------------------------
+
+5a) Create a version 3 certificate extensions file named v3.ext:
+
+touch v3.ext
+
+5b) The contents of the v3.ext file should be (remember to change IP address on DNS.1 =):
+
+authorityKeyIdentifier=keyid,issuer
+basicConstraints=CA:FALSE
+keyUsage = digitalSignature, nonRepudiation, keyEncipherment, dataEncipherment
+subjectAltName = @alt_names
+
+[alt_names]
+DNS.1 = (server IP address)
+
+----------------------------------------------------------------------------------------------------
+
+6) Generate and sign your DBserver.crt. Vaild for 3 years (1095 days):
+
+openssl x509 -req -SHA384 -extfile v3.ext -days 1095 -in DBserver.csr -CA ca.crt -CAkey ca.key -CAcreateserial -out DBserver.crt
