@@ -1,0 +1,11 @@
+# Definition of the table used
+
+[asterisk]
+nftables_family = inet
+nftables_table = sip
+
+# Drop packets
+blocktype = drop
+
+# Remove nftables prefix. Set names are limited to 15 char so we want them all
+nftables_set_prefix =
