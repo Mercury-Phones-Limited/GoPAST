@@ -19,6 +19,8 @@ chgrp asterisk $path/app_cdr.so;      # Writes ad hoc record to CDR.
 chgrp asterisk $path/app_dial.so;     # Used to connect channels together (i.e., make phone calls).
 chgrp asterisk $path/app_playback.so; # Plays pairs of tones of specified frequencies (DTMF mostly).
 #chgrp asterisk $path/app_read.so;    # Requests input of digits from callers and assigns input to a variable.
+chgrp asterisk $path/app_stack.so;    # Dialplan subroutines (Gosub, Return, etc)
+chgrp asterisk $path/app_system.so;   # Generic System() application
 
 ##################
 # Bridge modules #
