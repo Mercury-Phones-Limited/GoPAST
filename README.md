@@ -40,4 +40,4 @@
 
 <br>
 
-For abbreviations and there meanings used throughout this repository please refer to the README at - https://github.com/Ellwould/information_technology_and_telecommunication_abbreviations
+For a list of abbreviations and there meanings used throughout this repository please refer to the README at - https://github.com/Ellwould/information_technology_and_telecommunication_abbreviations
