@@ -1,1 +1,1 @@
-(database read username):(database read password)@tcp(127.0.0.1:3306)/(database)tls=skip-verify&autocommit=true
+(database read username):(database read password)@tcp(127.0.0.1:3306)/(database name)?tls=skip-verify&autocommit=true
