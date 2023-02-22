@@ -1,1 +1,1 @@
-(database write username):(database write password)@tcp(127.0.0.1:3306)/(database)
+(database write username):(database write password)@tcp(127.0.0.1:3306)/(database name)?tls=skip-verify&autocommit=true
