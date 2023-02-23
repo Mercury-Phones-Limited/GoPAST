@@ -2,7 +2,8 @@
 Description=siptrunkdetail9001
 
 [Service]
-User=root
+User=gopast
+Group=gopast
 Type=simple
 ExecStart=/usr/local/bin/siptrunkdetail9001
 
