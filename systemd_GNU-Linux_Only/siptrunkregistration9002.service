@@ -2,7 +2,8 @@
 Description=siptrunkregistration9002
 
 [Service]
-User=root
+User=gopast
+Group=gopast
 Type=simple
 ExecStart=/usr/local/bin/siptrunkregistration9002
 
