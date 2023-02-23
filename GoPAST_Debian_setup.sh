@@ -54,13 +54,6 @@ apt install net-tools htop git snapd fail2ban nftables mariadb-server;
 
 #------------------------------------------------------------------------------------------
 
-# Clone GoPAST reprepository
-
-cd /root;
-git clone https://github.com/Mercury-Phones-Limited/GoPAST.git;
-
-#------------------------------------------------------------------------------------------
-
 # Install Certbot
 
 # Snap is best for installing Certbot, as of writing (Feb 2023) snap tends to have a more up to date version of Certbot compared to Debian 11's software repositories.
