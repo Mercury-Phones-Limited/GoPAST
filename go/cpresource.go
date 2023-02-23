@@ -57,7 +57,6 @@ func DBWriteDetails() string {
 	return var1
 }
 
-
 func FQDN() string {
 	var1 := getFile("FQDN.txt")
 	return var1
