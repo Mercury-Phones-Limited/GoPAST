@@ -22,12 +22,6 @@ func NewPassword() string {
 	return res
 }
 
-func ClearScreen() {
-	c := exec.Command("clear")
-	c.Stdout = os.Stdout
-	c.Run()
-}
-
 func getFile(file string) string {
 	var path string
 	path = "/usr/local/etc/cpresource/"
