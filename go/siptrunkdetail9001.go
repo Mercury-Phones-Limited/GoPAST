@@ -23,7 +23,7 @@ func main() {
 
 		var accountCode string
 		accountCode = string(r.Host)
-		
+
 		// Open database connection.
 		db, err := sql.Open("mysql", dbDetails)
 		defer db.Close()
@@ -65,7 +65,7 @@ func main() {
 		for result.Next() {
 			var username string
 			var password string
-			
+
 			err = result.Scan(&username, &password)
 
 			// Handle error
