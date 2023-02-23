@@ -16,6 +16,8 @@
 
 ### The GoPAST projects goal is to make a stable and minimalist SIP Trunk server that can be easly managed by a web interface written in Go.
 
+### The GoPAST VoIP server is also designed with modularity in mind, each webpage runs as a seprate go executable.
+
 <br>
 
 ## How GoPAST works:
