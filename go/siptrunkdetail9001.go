@@ -34,12 +34,12 @@ func main() {
 		}
 
 		// SQL query returns all
-		result, err := db.Query("SELECT ps_auth.username, ps_auth.password FROM ps_auth WHERE ps_auth.username AND ps_endpoint.username = ?", accountCode)
+		result, err := db.Query("SELECT username, password FROM ps_auth WHERE customer_id = ?", accountCode)
 		defer db.Close()
 
 		// Handle error
 		if err != nil {
-			panic("Is the database on?")
+			panic("SQL query not working")
 		}
 
 		fmt.Fprintf(w, startHTML)
@@ -61,14 +61,12 @@ func main() {
 		fmt.Fprintf(w, "  <tr>")
 		fmt.Fprintf(w, "    <td><b>SIP USERNAME</b></td>")
 		fmt.Fprintf(w, "    <td><b>SIP PASSWORD</b></td>")
-		fmt.Fprintf(w, "    <td><b>RESTRICTED TO IP</b></td>")
 		fmt.Fprintf(w, "  </tr>")
 		for result.Next() {
 			var username string
 			var password string
-			var ip string
 			
-			err = result.Scan(&username, &password, &ip)
+			err = result.Scan(&username, &password)
 
 			// Handle error
 			if err != nil {
@@ -77,7 +75,6 @@ func main() {
 			fmt.Fprintf(w, "  <tr>")
 			fmt.Fprintf(w, "    <td>"+username+"</td>")
 			fmt.Fprintf(w, "    <td>"+password+"</td>")
-			fmt.Fprintf(w, "    <td>"+ip+"</td>")
 			fmt.Fprintf(w, "  </tr>")
 		}
 		fmt.Fprintf(w, "</table>")
