@@ -1,3 +1,6 @@
+// Copyright (c) 2023 Mercury Phones Limited. All rights reserved.
+// Licensed under the GNU Affero General Public License
+
 package cpresource
 
 import (
