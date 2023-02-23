@@ -7,7 +7,6 @@ import (
 	"github.com/sethvargo/go-password/password"
 	"log"
 	"os"
-	"os/exec"
 )
 
 func NewPassword() string {
