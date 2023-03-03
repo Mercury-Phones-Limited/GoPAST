@@ -71,5 +71,9 @@ ln -s /snap/bin/certbot /usr/bin/certbot;
     
 mkdir /usr/local/etc/cpresource;
 mkdir /usr/local/etc/oauth2-proxy;
+mkdir /root/go;
+mkdir /root/go/bin;
+mkdir /root/go/src;
+mkdir /root/go/pkg;
 
 #------------------------------------------------------------------------------------------
