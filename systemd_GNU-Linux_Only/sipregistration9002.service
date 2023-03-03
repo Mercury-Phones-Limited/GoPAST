@@ -1,11 +1,11 @@
 [Unit]
-Description=siptrunkregistration9002
+Description=sipregistration9002
 
 [Service]
 User=gopast
 Group=gopast
 Type=simple
-ExecStart=/usr/local/bin/siptrunkregistration9002
+ExecStart=/usr/local/bin/sipregistration9002
 
 [Install]
 WantedBy=multi-user.target
