@@ -22,8 +22,8 @@
 
 ## How GoPAST works:
 
-- Authentication for the web interface is achived via client certificates generated with OpenSSL.
-- Creating/removing/updating/deleting a SIP trunk in the web interface requires a 2FA code each time.
+- Authorization for the web interface is achived via oauth2-proxy.
+- GitHub is used as the provider for oauth2.
 - Debian is the recommended OS.
 - MariaDB is the database software.
 - Nginx is the webserver software.
