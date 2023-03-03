@@ -22,7 +22,7 @@ func main() {
 	var endHTML string
 	endHTML = cpresource.EndHTML()
 
-	http.HandleFunc("/sip-trunk-detail", func(w http.ResponseWriter, r *http.Request) {
+	http.HandleFunc("/sip-detail", func(w http.ResponseWriter, r *http.Request) {
 
 		var accountCode string
 		accountCode = string(r.Host)
@@ -54,7 +54,7 @@ func main() {
 		fmt.Fprintf(w, "    <td><h1>(Company Name)</h1></td>")
 		fmt.Fprintf(w, "  </tr>")
 		fmt.Fprintf(w, "  <tr>")
-		fmt.Fprintf(w, "    <td><h2>SIP Trunk Details For Account "+accountCode+"</h2></td>")
+		fmt.Fprintf(w, "    <td><h2>SIP Details For Account "+accountCode+"</h2></td>")
 		fmt.Fprintf(w, "  </tr>")
 		fmt.Fprintf(w, "</table>")
 		fmt.Fprintf(w, "<br>")
@@ -84,7 +84,7 @@ func main() {
 		fmt.Fprintf(w, endHTML)
 	})
 	ipPort := "127.0.0.1:9001"
-	fmt.Println("siptrunkdetail9001 is running on IP address and port " + ipPort)
+	fmt.Println("sipdetail9001 is running on IP address and port " + ipPort)
 	// Start server on IP address and port specified above
 	log.Fatal(http.ListenAndServe(ipPort, nil))
 }
