@@ -25,7 +25,7 @@ func main() {
 	var domainName string
 	domainName = cpresource.FQDN()
 
-	http.HandleFunc("/sip-trunk-registration", func(w http.ResponseWriter, r *http.Request) {
+	http.HandleFunc("/sip-registration", func(w http.ResponseWriter, r *http.Request) {
 
 		var accountCode string
 		accountCode = string(r.Host)
@@ -49,7 +49,7 @@ func main() {
 
 		fmt.Fprintf(w, startHTML)
 		fmt.Fprintf(w, "<a href=\"https://"+accountCode+"."+domainName+"\" class=\"button\">Main Menu</a> &nbsp &nbsp &nbsp")
-		fmt.Fprintf(w, "<a href=\"https://"+accountCode+"."+domainName+"\\sip-trunk-detail\" class=\"button\">SIP Trunk Details</a>")
+		fmt.Fprintf(w, "<a href=\"https://"+accountCode+"."+domainName+"\\sip-detail\" class=\"button\">SIP Trunk Details</a>")
 		fmt.Fprintf(w, "<br>")
 		fmt.Fprintf(w, "<br>")
 		fmt.Fprintf(w, "<br>")
@@ -58,7 +58,7 @@ func main() {
 		fmt.Fprintf(w, "    <td><h1>(Company Name)</h1></td>")
 		fmt.Fprintf(w, "  </tr>")
 		fmt.Fprintf(w, "  <tr>")
-		fmt.Fprintf(w, "    <td><h2>SIP Trunk Registrations For Account "+accountCode+"</h2></td>")
+		fmt.Fprintf(w, "    <td><h2>SIP Registrations For Account "+accountCode+"</h2></td>")
 		fmt.Fprintf(w, "  </tr>")
 		fmt.Fprintf(w, "</table>")
 		fmt.Fprintf(w, "<br>")
@@ -94,7 +94,7 @@ func main() {
 		fmt.Fprintf(w, endHTML)
 	})
 	ipPort := "127.0.0.1:9002"
-	fmt.Println("siptrunkregistration9002 is running on IP address and port " + ipPort)
+	fmt.Println("sipregistration9002 is running on IP address and port " + ipPort)
 	// Start server on port specified above
 	log.Fatal(http.ListenAndServe(ipPort, nil))
 }
