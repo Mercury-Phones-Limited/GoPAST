@@ -48,9 +48,9 @@ func main() {
 		}
 
 		fmt.Fprintf(w, startHTML)
-		fmt.Fprintf(w, "<a href=\"https://"+domainName+"\" class=\"button\">Main Menu</a> &nbsp &nbsp &nbsp")
-		fmt.Fprintf(w, "<a href=\"https://"+domainName+"\\sip-detail\" class=\"button\">SIP Details</a> &nbsp &nbsp &nbsp")
-		fmt.Fprintf(w, "<a href=\"https://"+domainName+"\\oauth2/sign_out\" class=\"button\">Logout</a>")
+		fmt.Fprintf(w, "<a href=\"https://"+domainName+" class=\"button\">Main Menu</a> &nbsp &nbsp &nbsp")
+		fmt.Fprintf(w, "<a href=\"https://"+domainName+"/sip-detail\" class=\"button\">SIP Details</a> &nbsp &nbsp &nbsp")
+		fmt.Fprintf(w, "<a href=\"https://"+domainName+"/oauth2/sign_out\" class=\"button\">Logout</a>")
 		fmt.Fprintf(w, "<br>")
 		fmt.Fprintf(w, "<br>")
 		fmt.Fprintf(w, "<br>")
