@@ -70,10 +70,10 @@ func main() {
                 fmt.Fprintf(w, "<br>")
 		fmt.Fprintf(w, "<table>")
 		fmt.Fprintf(w, "  <tr>")
-		fmt.Fprintf(w, "    <td><b>SIP USERNAME</b></td>")
-		fmt.Fprintf(w, "    <td><b>IP ADDRESS</b></td>")
-		fmt.Fprintf(w, "    <td><b>PORT</b></td>")
-		fmt.Fprintf(w, "    <td><b>USER AGENT (PBX)</b></td>")
+		fmt.Fprintf(w, "    <th><b>SIP USERNAME</b></th>")
+		fmt.Fprintf(w, "    <th><b>IP ADDRESS</b></th>")
+		fmt.Fprintf(w, "    <th><b>PORT</b></th>")
+		fmt.Fprintf(w, "    <th><b>USER AGENT (PBX)</b></th>")
 		fmt.Fprintf(w, "  </tr>")
 		for result.Next() {
 			var sip_username string
