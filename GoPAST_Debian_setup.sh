@@ -11,7 +11,21 @@
 # Check if user is root
 
 if [ "$EUID" -ne 0 ]
-  then echo "Please run as root"
+then 
+  printf "\nPlease run as root\n\n"
+  exit
+fi
+
+#------------------------------------------------------------------------------------------
+
+# Check if GoPAST has been downloaded in root home directory
+
+if 
+[ ! -d "/root/GoPAST" ] 
+then    
+  printf "\nDirectory /root/GoPAST does not exist.\n"    
+  printf "Please run commands: \"cd /root; git clone https://github.com/Mercury-Phones-Limited/GoPAST.git\"\n"    
+  printf "And run script again\n\n"    
   exit
 fi
 
@@ -42,7 +56,8 @@ printf '________________________________________________________________________
 printf '\n\nThe Nginx fingerprint above should be 573BFD6B3D8FBC641079A6ABABF5BD827BD9BF62\n';
 printf 'Does the finger print match? (yes/no):';
 read ans
-if [ "$ans" = "yes" ] || [ "$ans" = "y" ]; then
+if [ "$ans" = "yes" ] || [ "$ans" = "y" ];
+then
   printf 'Fingerprint matched\n';
 else
   printf '________________________________________________________________________________________________________';
