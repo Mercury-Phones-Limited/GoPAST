@@ -37,8 +37,6 @@ func main() {
                 fmt.Fprintf(w, "<div>")
                 fmt.Fprintf(w, "<a href=\"https://"+domainName+"/number-route\" class=\"ynumber\"><h2>Number Route</h2></a> &nbsp &nbsp &nbsp")
                 fmt.Fprintf(w, "<a href=\"https://"+domainName+"/alter-number\" class=\"ynumber\"><h2>Alter Number</h2></a>  &nbsp &nbsp &nbsp")
-                fmt.Fprintf(w, "<a href=\"https://"+domainName+"/add-number\" class=\"ynumber\"><h2>Add Number</h2></a> &nbsp &nbsp &nbsp")
-                fmt.Fprintf(w, "<a href=\"https://"+domainName+"/delete-number\" class=\"xdelete\"><h2>Delete Number</h2></a> &nbsp &nbsp &nbsp")
                 fmt.Fprintf(w, "</div>")
                 fmt.Fprintf(w, "<br>")
                 fmt.Fprintf(w, "<br>")
