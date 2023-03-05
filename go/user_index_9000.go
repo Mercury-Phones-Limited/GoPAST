@@ -24,18 +24,12 @@ func main() {
         companyName = cpresource.CompanyName()
         
         http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
-
-		var accountCode string
-		accountCode = string(r.Host)
 		
                 fmt.Fprintf(w, startHTML)
                 fmt.Fprintf(w, "<br>")
 		fmt.Fprintf(w, "<table>")
 		fmt.Fprintf(w, "  <tr>")
 		fmt.Fprintf(w, "    <th><h1>"+companyName+"</h1></th>")
-		fmt.Fprintf(w, "  </tr>")
-		fmt.Fprintf(w, "  <tr>")
-		fmt.Fprintf(w, "    <th><h2>Account "+accountCode+"</h2></th>")
 		fmt.Fprintf(w, "  </tr>")
 		fmt.Fprintf(w, "</table>")
 		fmt.Fprintf(w, "<br>")
