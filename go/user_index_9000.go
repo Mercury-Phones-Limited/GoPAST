@@ -25,6 +25,9 @@ func main() {
         
         http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
 
+		var accountCode string
+		accountCode = string(r.Host)
+		
                 fmt.Fprintf(w, startHTML)
                 fmt.Fprintf(w, "<br>")
 		fmt.Fprintf(w, "<br>")
