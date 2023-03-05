@@ -28,7 +28,7 @@ func main() {
 	var companyName string
         companyName = cpresource.CompanyName()
 
-	http.HandleFunc("/sip-registration", func(w http.ResponseWriter, r *http.Request) {
+	http.HandleFunc("/user-sip-registration", func(w http.ResponseWriter, r *http.Request) {
 
 		var accountCode string
 		accountCode = string(r.Host)
