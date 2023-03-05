@@ -1,0 +1,11 @@
+[Unit]
+Description=index9000
+
+[Service]
+User=gopast
+Group=gopast
+Type=simple
+ExecStart=/usr/local/bin/index9000
+
+[Install]
+WantedBy=multi-user.target
