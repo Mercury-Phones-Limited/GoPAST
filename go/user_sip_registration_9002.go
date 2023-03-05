@@ -24,9 +24,6 @@ func main() {
 
 	var domainName string
 	domainName = cpresource.FQDN()
-	
-	var companyName string
-        companyName = cpresource.CompanyName()
 
 	http.HandleFunc("/user-sip-registration", func(w http.ResponseWriter, r *http.Request) {
 
