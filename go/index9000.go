@@ -47,6 +47,7 @@ func main() {
                 fmt.Fprintf(w, "<div>")
                 fmt.Fprintf(w, "<a href=\"https://"+domainName+"/oauth2/sign_out\" class=\"wlogout\"><h2>Logout</h2></a> &nbsp &nbsp &nbsp")
                 fmt.Fprintf(w, "</div>")
+                fmt.Fprintf(w, "<br>")
                 fmt.Fprintf(w, endHTML)
 
         })
