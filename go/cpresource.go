@@ -61,6 +61,11 @@ func FQDN() string {
 	return var1
 }
 
+func CompanyName() string {
+	var1 := getFile("companyName.txt")
+	return var1
+}
+
 /*
 
                     GNU AFFERO GENERAL PUBLIC LICENSE
