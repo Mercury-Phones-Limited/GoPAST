@@ -93,11 +93,9 @@ ln -s /snap/bin/certbot /usr/bin/certbot;
     # Create Directories #
     ######################
     
-mkdir /usr/local/etc/cpresource;
-mkdir /usr/local/etc/oauth2-proxy;
+mkdir /usr/local/etc/{cpresource,oauth2-proxy};
 mkdir /root/go;
-mkdir /root/go/bin;
-mkdir /root/go/src;
-mkdir /root/go/pkg;
+mkdir /root/go/{bin,src,pkg};
+mkdir /root/go/src/{index9000,sipdetail9001,sipregistration9002,altersip9003,addsip9004,deletesip9005,numberroute9006,alternumber9007,addnumber9008,deletenumber9009}
 
 #------------------------------------------------------------------------------------------
