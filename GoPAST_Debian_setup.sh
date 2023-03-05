@@ -96,6 +96,15 @@ ln -s /snap/bin/certbot /usr/bin/certbot;
 mkdir /usr/local/etc/{cpresource,oauth2-proxy};
 mkdir /root/go;
 mkdir /root/go/{bin,src,pkg};
-mkdir /root/go/src/{index9000,sipdetail9001,sipregistration9002,altersip9003,addsip9004,deletesip9005,numberroute9021,alternumber9022,addnumber9023,deletenumber9024};
+
+mkdir /root/go/src/admin_index_8000;
+mkdir /root/go/src/{admin_sip_detail_8001,admin_sip_registration_8002,admin_alter_sip_8003,admin_add_sip_8004,admin_delete_sip_8005}
+mkdir /root/go/src/{admin_number_route_8020,admin_alter_number_8021,admin_add_number_8022,admin_delete_number_8023};
+mkdir /root/go/src/{admin_account_detail_8040,admin_alter_account_8041,admin_add_account_8042,admin_delete_account_8043};
+
+mkdir /root/go/src/user_index_9000;
+mkdir /root/go/src/{user_sip_detail_9001,user_sip_registration_9002,user_alter_sip_9003,user_add_sip_9004,user_delete_sip_9005}
+mkdir /root/go/src/{user_number_route_9020,user_alter_number_9021};
+mkdir /root/go/src/{user_account_detail_9040,user_alter_account_9041,};
 
 #------------------------------------------------------------------------------------------
