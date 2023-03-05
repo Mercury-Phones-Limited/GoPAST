@@ -1,5 +1,5 @@
 [Unit]
-Description=sip_registration_9002
+Description=user_sip_registration_9002
 
 [Service]
 User=gopast
