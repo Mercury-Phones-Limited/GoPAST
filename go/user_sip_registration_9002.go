@@ -57,7 +57,7 @@ func main() {
 				panic("")
 			}
 
-		result, err := db.Query("SELECT endpoint, via_addr, via_port, user_agent FROM ps_contact, ps_endpoint WHERE ps_contact.endpoint = ps_endpoint.id AND ps_endpoint.customer_id = ?", accountCode)
+		result, err := db.Query("SELECT endpoint, via_addr, via_port, user_agent FROM ps_contact, ps_endpoint WHERE ps_contact.endpoint = ps_endpoint.id AND ps_endpoint.customer_id = ?", accountNumber)
 		defer db.Close()
 
 		// Handle error
