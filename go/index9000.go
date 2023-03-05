@@ -23,10 +23,10 @@ func main() {
         http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
 
                 fmt.Fprintf(w, startHTML)
-                fmt.Fprintf(w, "<a href=\"https://"+domainName+"/sip-detail\" class=\"indexboxsip\"><h2>SIP Details</h2></a> &nbsp &nbsp &nbsp")
-                fmt.Fprintf(w, "<a href=\"https://"+domainName+"/sip-registration\" class=\"indexboxsip\"><h2>SIP Registration</h2></a>  &nbsp &nbsp &nbsp")
-                fmt.Fprintf(w, "<a href=\"https://"+domainName+"/alter-sip\" class=\"indexboxsip\"><h2>Alter SIP</h2></a> &nbsp &nbsp &nbsp")
-                fmt.Fprintf(w, "<a href=\"https://"+domainName+"/add-sip\" class=\"indexboxsip\"><h2>Add SIP</h2></a> &nbsp &nbsp &nbsp")
+                fmt.Fprintf(w, "<a href=\"https://"+domainName+"/sip-detail\" class=\"y-sip\"><h2>SIP Details</h2></a> &nbsp &nbsp &nbsp")
+                fmt.Fprintf(w, "<a href=\"https://"+domainName+"/sip-registration\" class=\"y-sip\"><h2>SIP Registration</h2></a>  &nbsp &nbsp &nbsp")
+                fmt.Fprintf(w, "<a href=\"https://"+domainName+"/alter-sip\" class=\"y-sip\"><h2>Alter SIP</h2></a> &nbsp &nbsp &nbsp")
+                fmt.Fprintf(w, "<a href=\"https://"+domainName+"/add-sip\" class=\"y-sip\"><h2>Add SIP</h2></a> &nbsp &nbsp &nbsp")
                 fmt.Fprintf(w, endHTML)
 
         })
