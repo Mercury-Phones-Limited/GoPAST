@@ -30,8 +30,8 @@ func main() {
 
 	http.HandleFunc("/user-sip-registration", func(w http.ResponseWriter, r *http.Request) {
 
-		var accountCode string
-		accountCode = string(r.Host)
+		var emailAddress string
+		emailAddress = string(r.Header.Get("X-Forwarded-Email"))
 
 		// Open a database connection.
 		db, err := sql.Open("mysql", dbDetails)
