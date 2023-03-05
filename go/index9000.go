@@ -27,12 +27,6 @@ func main() {
                 fmt.Fprintf(w, "<a href=\"https://"+domainName+"/sip-registration\" class=\"indexboxsip\"><h2>SIP Registration</h2></a>  &nbsp &nbsp &nbsp")
                 fmt.Fprintf(w, "<a href=\"https://"+domainName+"/alter-sip\" class=\"indexboxsip\"><h2>Alter SIP</h2></a> &nbsp &nbsp &nbsp")
                 fmt.Fprintf(w, "<a href=\"https://"+domainName+"/add-sip\" class=\"indexboxsip\"><h2>Add SIP</h2></a> &nbsp &nbsp &nbsp")
-                fmt.Fprintf(w, "<a href=\"https://"+domainName+"/delete-sip\" class=\"deleteindexbox\"><h2>Delete SIP</h2></a> &nbsp &nbsp &nbsp")
-                fmt.Fprintf(w, "<a href=\"https://"+domainName+"/number-route\" class=\"numberindexbox\"><h2>Number Route</h2></a> &nbsp &nbsp &nbsp")
-                fmt.Fprintf(w, "<a href=\"https://"+domainName+"/alter-number\" class=\"numberindexbox\"><h2>Alter Number</h2></a>  &nbsp &nbsp &nbsp")
-                fmt.Fprintf(w, "<a href=\"https://"+domainName+"/add-number\" class=\"numberindexbox\"><h2>Add Number</h2></a> &nbsp &nbsp &nbsp")
-                fmt.Fprintf(w, "<a href=\"https://"+domainName+"/delete-number\" class=\"deleteindexbox\"><h2>Delete Number</h2></a> &nbsp &nbsp &nbsp")
-                fmt.Fprintf(w, "<a href=\"https://"+domainName+"/oauth2/sign_out\" class=\"logoutindexbox\"><h2>Logout</h2></a> &nbsp &nbsp &nbsp")
                 fmt.Fprintf(w, endHTML)
 
         })
