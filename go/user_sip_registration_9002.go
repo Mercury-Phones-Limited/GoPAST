@@ -24,6 +24,9 @@ func main() {
 
 	var domainName string
 	domainName = cpresource.FQDN()
+	
+	var companyName string
+        companyName = cpresource.CompanyName()
 
 	http.HandleFunc("/sip-registration", func(w http.ResponseWriter, r *http.Request) {
 
@@ -59,10 +62,10 @@ func main() {
 		fmt.Fprintf(w, "<br>")
 		fmt.Fprintf(w, "<table>")
 		fmt.Fprintf(w, "  <tr>")
-		fmt.Fprintf(w, "    <td><h1>(Company Name)</h1></td>")
+		fmt.Fprintf(w, "    <th><h1>"+companyName+"</h1></th>")
 		fmt.Fprintf(w, "  </tr>")
 		fmt.Fprintf(w, "  <tr>")
-		fmt.Fprintf(w, "    <td><h2>SIP Registrations For Account "+accountCode+"</h2></td>")
+		fmt.Fprintf(w, "    <th><h2>SIP Registrations For Account "+accountCode+"</h2></th>")
 		fmt.Fprintf(w, "  </tr>")
 		fmt.Fprintf(w, "</table>")
 		fmt.Fprintf(w, "<br>")
