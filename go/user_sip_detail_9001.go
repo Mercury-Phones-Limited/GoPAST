@@ -23,15 +23,12 @@ func main() {
 	endHTML = cpresource.EndHTML()
 
 	var domainName string
-        domainName = cpresource.FQDN()
-	
-	var companyName string
-        companyName = cpresource.CompanyName()
-	
+	domainName = cpresource.FQDN()
+
 	http.HandleFunc("/user-sip-detail", func(w http.ResponseWriter, r *http.Request) {
 
-		var accountCode string
-		accountCode = string(r.Host)
+		var emailAddress string
+		emailAddress = string(r.Header.Get("X-Forwarded-Email"))
 
 		// Open database connection.
 		db, err := sql.Open("mysql", dbDetails)
@@ -42,80 +39,99 @@ func main() {
 			panic("Is the database on?")
 		}
 
-		// SQL query returns all
-		result, err := db.Query("SELECT username, password FROM ps_auth WHERE customer_id = ?", accountCode)
+		// SQL query returns account number based on email address
+		accountNumberResult, err := db.Query("SELECT account_number FROM account_number_lookup WHERE email_address = ?", emailAddress)
 		defer db.Close()
 
 		// Handle error
 		if err != nil {
-			panic("SQL query not working")
+			panic("SQL query for account number not working")
 		}
 
-		fmt.Fprintf(w, startHTML)
-		fmt.Fprintf(w, "<a href=\"https://"+domainName+"/\" class=\"sipbutton\">Main Menu</a> &nbsp &nbsp &nbsp")
-                fmt.Fprintf(w, "<a href=\"https://"+domainName+"/user-sip-registration\" class=\"sipbutton\">SIP Registration</a> &nbsp &nbsp &nbsp")
-                fmt.Fprintf(w, "<a href=\"https://"+domainName+"/user-alter-sip\" class=\"sipbutton\">Alter SIP</a> &nbsp &nbsp &nbsp")
-		fmt.Fprintf(w, "<a href=\"https://"+domainName+"/user-add-sip\" class=\"sipbutton\">Add SIP</a> &nbsp &nbsp &nbsp")
-		fmt.Fprintf(w, "<a href=\"https://"+domainName+"/user-delete-sip\" class=\"deletebutton\">Delete SIP</a> &nbsp &nbsp &nbsp")
-		fmt.Fprintf(w, "<a href=\"https://"+domainName+"/oauth2/sign_out\" class=\"logoutbutton\">Logout</a>")
-		fmt.Fprintf(w, "<br>")
-		fmt.Fprintf(w, "<br>")
-		fmt.Fprintf(w, "<br>")
-		fmt.Fprintf(w, "<table>")
-		fmt.Fprintf(w, "  <tr>")
-		fmt.Fprintf(w, "    <th><h1>"+companyName+"</h1></th>")
-		fmt.Fprintf(w, "  </tr>")
-		fmt.Fprintf(w, "  <tr>")
-		fmt.Fprintf(w, "    <th><h2>SIP Details For Account "+accountCode+"</h2></th>")
-		fmt.Fprintf(w, "  </tr>")
-		fmt.Fprintf(w, "</table>")
-		fmt.Fprintf(w, "<br>")
-		fmt.Fprintf(w, "<br>")
-		fmt.Fprintf(w, "<br>")
-		fmt.Fprintf(w, "<input type=\"text\" id=\"sipInput\" onkeyup=\"tableFunction()\" placeholder=\"Search for SIP username...\" title=\"Type in a sip username\">")
-                fmt.Fprintf(w, "<br>")
-                fmt.Fprintf(w, "<br>")
-		fmt.Fprintf(w, "<table id=\"sipTable\">")
-		fmt.Fprintf(w, "  <tr>")
-		fmt.Fprintf(w, "    <th><b>SIP USERNAME</b></th>")
-		fmt.Fprintf(w, "    <th><b>SIP PASSWORD</b></th>")
-		fmt.Fprintf(w, "  </tr>")
-		for result.Next() {
-			var username string
-			var password string
-
-			err = result.Scan(&username, &password)
+		for accountNumberResult.Next() {
+			var accountNumber string
+			err = accountNumberResult.Scan(&accountNumber)
 
 			// Handle error
 			if err != nil {
 				panic("")
 			}
+
+			// SQL query returns all
+			result, err := db.Query("SELECT username, password FROM ps_auth WHERE customer_id = ?", accountNumber)
+			defer db.Close()
+
+			// Handle error
+			if err != nil {
+				panic("SQL query for data not working")
+			}
+
+			fmt.Fprintf(w, startHTML)
+			fmt.Fprintf(w, "<a href=\"https://"+domainName+"/\" class=\"sipbutton\">Main Menu</a> &nbsp &nbsp &nbsp")
+			fmt.Fprintf(w, "<a href=\"https://"+domainName+"/user-sip-registration\" class=\"sipbutton\">SIP Registration</a> &nbsp &nbsp &nbsp")
+			fmt.Fprintf(w, "<a href=\"https://"+domainName+"/user-alter-sip\" class=\"sipbutton\">Alter SIP</a> &nbsp &nbsp &nbsp")
+			fmt.Fprintf(w, "<a href=\"https://"+domainName+"/user-add-sip\" class=\"sipbutton\">Add SIP</a> &nbsp &nbsp &nbsp")
+			fmt.Fprintf(w, "<a href=\"https://"+domainName+"/user-delete-sip\" class=\"deletebutton\">Delete SIP</a> &nbsp &nbsp &nbsp")
+			fmt.Fprintf(w, "<a href=\"https://"+domainName+"/oauth2/sign_out\" class=\"logoutbutton\">Logout</a>")
+			fmt.Fprintf(w, "<br>")
+			fmt.Fprintf(w, "<br>")
+			fmt.Fprintf(w, "<br>")
+			fmt.Fprintf(w, "<table>")
 			fmt.Fprintf(w, "  <tr>")
-			fmt.Fprintf(w, "    <td>"+username+"</td>")
-			fmt.Fprintf(w, "    <td>"+password+"</td>")
+			fmt.Fprintf(w, "    <th><h3>SIP Details For Account "+accountNumber+"</h3></th>")
 			fmt.Fprintf(w, "  </tr>")
+			fmt.Fprintf(w, "  <tr>")
+			fmt.Fprintf(w, "    <th><h3>user logged in is "+emailAddress+"</h3></th>")
+			fmt.Fprintf(w, "  </tr>")
+			fmt.Fprintf(w, "</table>")
+			fmt.Fprintf(w, "<br>")
+			fmt.Fprintf(w, "<br>")
+			fmt.Fprintf(w, "<br>")
+			fmt.Fprintf(w, "<input type=\"text\" id=\"sipInput\" onkeyup=\"tableFunction()\" placeholder=\"Search for SIP username...\" title=\"Type in a sip username\">")
+			fmt.Fprintf(w, "<br>")
+			fmt.Fprintf(w, "<br>")
+			fmt.Fprintf(w, "<table id=\"sipTable\">")
+			fmt.Fprintf(w, "  <tr>")
+			fmt.Fprintf(w, "    <th><b>SIP USERNAME</b></th>")
+			fmt.Fprintf(w, "    <th><b>SIP PASSWORD</b></th>")
+			fmt.Fprintf(w, "  </tr>")
+			for result.Next() {
+				var username string
+				var password string
+
+				err = result.Scan(&username, &password)
+
+				// Handle error
+				if err != nil {
+					panic("")
+				}
+				fmt.Fprintf(w, "  <tr>")
+				fmt.Fprintf(w, "    <td>"+username+"</td>")
+				fmt.Fprintf(w, "    <td>"+password+"</td>")
+				fmt.Fprintf(w, "  </tr>")
+			}
 		}
 		fmt.Fprintf(w, "</table>")
 		fmt.Fprintf(w, "<script>")
-                fmt.Fprintf(w, "function tableFunction() {")
-                fmt.Fprintf(w, "  var input, filter, table, tr, td, i, txtValue;")
-                fmt.Fprintf(w, "  input = document.getElementById(\"sipInput\");")
-                fmt.Fprintf(w, "  filter = input.value.toUpperCase();")
-                fmt.Fprintf(w, "  table = document.getElementById(\"sipTable\");")
-                fmt.Fprintf(w, "  tr = table.getElementsByTagName(\"tr\");")
-                fmt.Fprintf(w, "  for (i = 0; i < tr.length; i++) {")
-                fmt.Fprintf(w, "    td = tr[i].getElementsByTagName(\"td\")[0];")
-                fmt.Fprintf(w, "    if (td) {")
-                fmt.Fprintf(w, "      txtValue = td.textContent || td.innerText;")
-                fmt.Fprintf(w, "      if (txtValue.toUpperCase().indexOf(filter) > -1) {")
-                fmt.Fprintf(w, "        tr[i].style.display = \"\";")
-                fmt.Fprintf(w, "      } else {")
-                fmt.Fprintf(w, "        tr[i].style.display = \"none\";")
-                fmt.Fprintf(w, "      }")
-                fmt.Fprintf(w, "    }")
-                fmt.Fprintf(w, "  }")
-                fmt.Fprintf(w, "}")
-                fmt.Fprintf(w, "</script>")
+		fmt.Fprintf(w, "function tableFunction() {")
+		fmt.Fprintf(w, "  var input, filter, table, tr, td, i, txtValue;")
+		fmt.Fprintf(w, "  input = document.getElementById(\"sipInput\");")
+		fmt.Fprintf(w, "  filter = input.value.toUpperCase();")
+		fmt.Fprintf(w, "  table = document.getElementById(\"sipTable\");")
+		fmt.Fprintf(w, "  tr = table.getElementsByTagName(\"tr\");")
+		fmt.Fprintf(w, "  for (i = 0; i < tr.length; i++) {")
+		fmt.Fprintf(w, "    td = tr[i].getElementsByTagName(\"td\")[0];")
+		fmt.Fprintf(w, "    if (td) {")
+		fmt.Fprintf(w, "      txtValue = td.textContent || td.innerText;")
+		fmt.Fprintf(w, "      if (txtValue.toUpperCase().indexOf(filter) > -1) {")
+		fmt.Fprintf(w, "        tr[i].style.display = \"\";")
+		fmt.Fprintf(w, "      } else {")
+		fmt.Fprintf(w, "        tr[i].style.display = \"none\";")
+		fmt.Fprintf(w, "      }")
+		fmt.Fprintf(w, "    }")
+		fmt.Fprintf(w, "  }")
+		fmt.Fprintf(w, "}")
+		fmt.Fprintf(w, "</script>")
 		fmt.Fprintf(w, endHTML)
 	})
 	ipPort := "127.0.0.1:9001"
