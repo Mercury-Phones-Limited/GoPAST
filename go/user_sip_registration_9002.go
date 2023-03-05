@@ -41,6 +41,24 @@ func main() {
 		if err != nil {
 			panic("Is the database on?")
 		}
+		
+		// SQL query returns account number based on email address
+		accountNumberResult, err := db.Query("SELECT account_number FROM account_number_lookup WHERE email_address = ?", emailAddress)
+		defer db.Close()
+
+		// Handle error
+		if err != nil {
+			panic("SQL query for account number not working")
+		}
+
+		for accountNumberResult.Next() {
+			var accountNumber string
+			err = accountNumberResult.Scan(&accountNumber)
+
+			// Handle error
+			if err != nil {
+				panic("")
+			}
 
 		result, err := db.Query("SELECT endpoint, via_addr, via_port, user_agent FROM ps_contact, ps_endpoint WHERE ps_contact.endpoint = ps_endpoint.id AND ps_endpoint.customer_id = ?", accountCode)
 		defer db.Close()
@@ -99,6 +117,7 @@ func main() {
 			fmt.Fprintf(w, "    <td>"+port+"</td>")
 			fmt.Fprintf(w, "    <td>"+user_agent+"</td>")
 			fmt.Fprintf(w, "  </tr>")
+		}
 		}
 		fmt.Fprintf(w, "</table>")
 		fmt.Fprintf(w, "<script>")
