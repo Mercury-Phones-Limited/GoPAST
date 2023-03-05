@@ -65,7 +65,7 @@ func main() {
 
 		// Handle error
 		if err != nil {
-			panic("SQL query not working")
+			panic("SQL query for data not working")
 		}
 
 		fmt.Fprintf(w, startHTML)
