@@ -23,6 +23,18 @@ func main() {
         http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
 
                 fmt.Fprintf(w, startHTML)
+                fmt.Fprintf(w, "<br>")
+		fmt.Fprintf(w, "<br>")
+		fmt.Fprintf(w, "<table>")
+		fmt.Fprintf(w, "  <tr>")
+		fmt.Fprintf(w, "    <th><h1>"+companyName+"</h1></th>")
+		fmt.Fprintf(w, "  </tr>")
+		fmt.Fprintf(w, "  <tr>")
+		fmt.Fprintf(w, "    <th><h2>SIP Details For Account "+accountCode+"</h2></th>")
+		fmt.Fprintf(w, "  </tr>")
+		fmt.Fprintf(w, "</table>")
+		fmt.Fprintf(w, "<br>")
+		fmt.Fprintf(w, "<br>")
                 fmt.Fprintf(w, "<div>")
                 fmt.Fprintf(w, "<a href=\"https://"+domainName+"/user-sip-detail\" class=\"zsip\"><h2>SIP Details</h2></a> &nbsp &nbsp &nbsp")
                 fmt.Fprintf(w, "<a href=\"https://"+domainName+"/user-sip-registration\" class=\"zsip\"><h2>SIP Registration</h2></a>  &nbsp &nbsp &nbsp")
