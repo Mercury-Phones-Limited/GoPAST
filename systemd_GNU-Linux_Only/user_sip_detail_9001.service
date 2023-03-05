@@ -1,11 +1,11 @@
 [Unit]
-Description=sipdetail9001
+Description=user_sip_detail_9001
 
 [Service]
 User=gopast
 Group=gopast
 Type=simple
-ExecStart=/usr/local/bin/sipdetail9001
+ExecStart=/usr/local/bin/user_sip_detail_9001
 
 [Install]
 WantedBy=multi-user.target
