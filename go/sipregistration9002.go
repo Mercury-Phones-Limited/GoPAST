@@ -48,12 +48,12 @@ func main() {
 		}
 
 		fmt.Fprintf(w, startHTML)
-		fmt.Fprintf(w, "<a href=\"https://"+domainName+"/\" class=\"buttonsip\">Main Menu</a> &nbsp &nbsp &nbsp")
-                fmt.Fprintf(w, "<a href=\"https://"+domainName+"/sip-detail\" class=\"buttonsip\">SIP Detail</a> &nbsp &nbsp &nbsp")
-                fmt.Fprintf(w, "<a href=\"https://"+domainName+"/alter-sip\" class=\"buttonsip\">Alter SIP</a> &nbsp &nbsp &nbsp")
-		fmt.Fprintf(w, "<a href=\"https://"+domainName+"/add-sip\" class=\"buttonsip\">Add SIP</a> &nbsp &nbsp &nbsp")
-		fmt.Fprintf(w, "<a href=\"https://"+domainName+"/delete-sip\" class=\"buttondelete\">Delete SIP</a> &nbsp &nbsp &nbsp")
-		fmt.Fprintf(w, "<a href=\"https://"+domainName+"/oauth2/sign_out\" class=\"buttonlogout\">Logout</a>")
+		fmt.Fprintf(w, "<a href=\"https://"+domainName+"/\" class=\"sipbutton\">Main Menu</a> &nbsp &nbsp &nbsp")
+                fmt.Fprintf(w, "<a href=\"https://"+domainName+"/sip-detail\" class=\"sipbutton\">SIP Detail</a> &nbsp &nbsp &nbsp")
+                fmt.Fprintf(w, "<a href=\"https://"+domainName+"/alter-sip\" class=\"sipbutton\">Alter SIP</a> &nbsp &nbsp &nbsp")
+		fmt.Fprintf(w, "<a href=\"https://"+domainName+"/add-sip\" class=\"sipbutton\">Add SIP</a> &nbsp &nbsp &nbsp")
+		fmt.Fprintf(w, "<a href=\"https://"+domainName+"/delete-sip\" class=\"deletebutton\">Delete SIP</a> &nbsp &nbsp &nbsp")
+		fmt.Fprintf(w, "<a href=\"https://"+domainName+"/oauth2/sign_out\" class=\"logoutbutton\">Logout</a>")
 		fmt.Fprintf(w, "<br>")
 		fmt.Fprintf(w, "<br>")
 		fmt.Fprintf(w, "<br>")
