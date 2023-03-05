@@ -30,7 +30,6 @@ func main() {
 		
                 fmt.Fprintf(w, startHTML)
                 fmt.Fprintf(w, "<br>")
-		fmt.Fprintf(w, "<br>")
 		fmt.Fprintf(w, "<table>")
 		fmt.Fprintf(w, "  <tr>")
 		fmt.Fprintf(w, "    <th><h1>"+companyName+"</h1></th>")
@@ -42,7 +41,6 @@ func main() {
 		fmt.Fprintf(w, "<br>")
 		fmt.Fprintf(w, "<br>")
 		fmt.Fprintf(w, "<hr class=\"roundedbar\">")
-		fmt.Fprintf(w, "<br>")
 		fmt.Fprintf(w, "<br>")
                 fmt.Fprintf(w, "<div>")
                 fmt.Fprintf(w, "<a href=\"https://"+domainName+"/user-sip-detail\" class=\"zsip\"><h2>SIP Details</h2></a> &nbsp &nbsp &nbsp")
