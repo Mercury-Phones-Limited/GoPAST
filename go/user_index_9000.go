@@ -38,6 +38,7 @@ func main() {
 		fmt.Fprintf(w, "</table>")
 		fmt.Fprintf(w, "<br>")
 		fmt.Fprintf(w, "<br>")
+		fmt.Fprintf(w, "<hr class=\"roundedbar\">")
                 fmt.Fprintf(w, "<div>")
                 fmt.Fprintf(w, "<a href=\"https://"+domainName+"/user-sip-detail\" class=\"zsip\"><h2>SIP Details</h2></a> &nbsp &nbsp &nbsp")
                 fmt.Fprintf(w, "<a href=\"https://"+domainName+"/user-sip-registration\" class=\"zsip\"><h2>SIP Registration</h2></a>  &nbsp &nbsp &nbsp")
