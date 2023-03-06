@@ -2,7 +2,7 @@
 
 <br>
 
-## GoPAST stands for: Go Processing Asterisk SIP Trunks
+## GoPAST stands for: Go Processing A SIP Trunk
 
 <br>
 
