@@ -185,9 +185,6 @@ func main() {
 		fmt.Fprintf(w, "</div>")
 		fmt.Fprintf(w, "<br>")
                 fmt.Fprintf(w, "<br>")
-                fmt.Fprintf(w, "<hr class=\"roundedbar\">")
-                fmt.Fprintf(w, "<br>")
-		fmt.Fprintf(w, "<br>")
 		fmt.Fprintf(w, endHTML)
 	})
 	ipPort := "127.0.0.1:9003"
