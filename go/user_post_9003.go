@@ -41,7 +41,7 @@ func main() {
 	var endHTML string
 	endHTML = cpresource.EndHTML()
 
-	http.HandleFunc("/user-add-alter-sip", func(w http.ResponseWriter, r *http.Request) {
+	http.HandleFunc("/user-post-9003", func(w http.ResponseWriter, r *http.Request) {
 
 		fmt.Fprintf(w, startHTML)
 		fmt.Fprintf(w, "<table>")
