@@ -140,6 +140,11 @@ func main() {
 		fmt.Fprintf(w, "  <input type=\"submit\" value=\"submit\" />")
 		fmt.Fprintf(w, "</form>")
 		fmt.Fprintf(w, "</div>")
+		fmt.Fprintf(w, "<br>")
+                fmt.Fprintf(w, "<br>")
+                fmt.Fprintf(w, "<hr class=\"roundedbar\">")
+                fmt.Fprintf(w, "<br>")
+		fmt.Fprintf(w, "<br>")
 		fmt.Fprintf(w, endHTML)
 	})
 	ipPort := "127.0.0.1:9003"
