@@ -40,6 +40,9 @@ func main() {
 
 	var endHTML string
 	endHTML = cpresource.EndHTML()
+	
+	var domainName string
+	domainName = cpresource.FQDN()
 
 	http.HandleFunc("/user-sip-post", func(w http.ResponseWriter, r *http.Request) {
 
@@ -47,17 +50,6 @@ func main() {
 		fmt.Fprintf(w, "<a href=\"https://"+domainName+"/\" class=\"sipbutton\">Main Menu</a> &nbsp &nbsp &nbsp")
 		fmt.Fprintf(w, "<a href=\"https://"+domainName+"/user-sip-registration\" class=\"sipbutton\">SIP Registration</a> &nbsp &nbsp &nbsp")
 		fmt.Fprintf(w, "<a href=\"https://"+domainName+"/oauth2/sign_out\" class=\"logoutbutton\">Logout</a>")
-		fmt.Fprintf(w, "<br>")
-		fmt.Fprintf(w, "<br>")
-		fmt.Fprintf(w, "<br>")
-		fmt.Fprintf(w, "<table>")
-		fmt.Fprintf(w, "  <tr>")
-		fmt.Fprintf(w, "    <th><h3>SIP Details For Account "+accountNumber+"</h3></th>")
-		fmt.Fprintf(w, "  </tr>")
-		fmt.Fprintf(w, "  <tr>")
-		fmt.Fprintf(w, "    <th><h3>user logged in is "+emailAddress+"</h3></th>")
-		fmt.Fprintf(w, "  </tr>")
-		fmt.Fprintf(w, "</table>")
 		fmt.Fprintf(w, "<br>")
 		fmt.Fprintf(w, "<br>")
 		fmt.Fprintf(w, "<br>")
