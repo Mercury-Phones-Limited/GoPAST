@@ -24,6 +24,9 @@ SOFTWARE.
 
 */
 
+// Contributor(s):
+// Elliot Keavney - elliot@mercuryphones.co.uk
+
 package cpresource
 
 import (
