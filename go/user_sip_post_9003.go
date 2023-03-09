@@ -92,6 +92,7 @@ func main() {
 		fmt.Fprintf(w, "  <input name=\"note\" type=\"text\" value=\"\" />")
 		fmt.Fprintf(w, "  <br>")
 		fmt.Fprintf(w, "  <br>")
+		fmt.Fprintf(w, "  <input type=\"submit\" value=\"submit\" />")
 		fmt.Fprintf(w, "</form>")
 		fmt.Fprintf(w, "</div>")
 		fmt.Fprintf(w, "<br>")
