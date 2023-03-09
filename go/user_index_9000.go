@@ -99,3 +99,6 @@ func main() {
         // Start server on IP address and port specified above
         log.Fatal(http.ListenAndServe(ipPort, nil))
 }
+
+// Contributor(s):
+// Elliot Keavney - elliot@mercuryphones.co.uk
