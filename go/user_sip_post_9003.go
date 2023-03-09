@@ -153,7 +153,7 @@ func main() {
 		fmt.Fprintf(w, "  </tr>")
 		fmt.Fprintf(w, "</table>")
 		fmt.Fprintf(w, "<br>")
-		fmt.Fprintf(w, "<div class=updatesip>")
+		fmt.Fprintf(w, "<div class=deletesip>")
 		fmt.Fprintf(w, "<form method=\"POST\" action=\"/user-\">")
 		fmt.Fprintf(w, "  <label><b>SIP trunk username to update (Required)</b></label>")
 		fmt.Fprintf(w, "  <br>")
