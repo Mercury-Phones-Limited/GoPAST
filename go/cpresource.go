@@ -24,9 +24,6 @@ SOFTWARE.
 
 */
 
-// Contributor(s):
-// Elliot Keavney - elliot@mercuryphones.co.uk
-
 package cpresource
 
 import (
@@ -91,3 +88,6 @@ func CompanyName() string {
 	var1 := getFile("companyName.txt")
 	return var1
 }
+
+// Contributor(s):
+// Elliot Keavney - elliot@mercuryphones.co.uk
