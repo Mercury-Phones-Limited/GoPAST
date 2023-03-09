@@ -1,0 +1,11 @@
+[Unit]
+Description=user_post_9003
+
+[Service]
+User=gopast
+Group=gopast
+Type=simple
+ExecStart=/usr/local/bin/user_post_9003
+
+[Install]
+WantedBy=multi-user.target
