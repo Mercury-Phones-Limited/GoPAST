@@ -155,7 +155,7 @@ func main() {
                 fmt.Fprintf(w, "    </select>")
 		fmt.Fprintf(w, "  <br>")
 		fmt.Fprintf(w, "  <br>")
-		fmt.Fprintf(w, "  <label><b>New note [will delete old note] (Optional, No Spaces)</b></label>")
+		fmt.Fprintf(w, "  <label><b>Replace note (Optional, No Spaces)</b></label>")
 		fmt.Fprintf(w, "  <br>")
 		fmt.Fprintf(w, "  <input name=\"note\" type=\"text\" value=\"\" />")
 		fmt.Fprintf(w, "  <br>")
