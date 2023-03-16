@@ -77,7 +77,7 @@ func main() {
 		fmt.Fprintf(w, "  <input name=\"ip\" type=\"text\" value=\"\" />")
 		fmt.Fprintf(w, "  <br>")
 		fmt.Fprintf(w, "  <br>")
-		fmt.Fprintf(w, "  <label for=\"subnet_prefix\"><b>Subnet prefix (Required)</b></label>")
+		fmt.Fprintf(w, "  <label for=\"subnet_prefix\"><b>IP subnet or prefix (Required)</b></label>")
 		fmt.Fprintf(w, "  <br>")
 		fmt.Fprintf(w, "    <select id=\"subnet_prefix\" name=\"subnet_prefix\">")
 		fmt.Fprintf(w, "      <option value=\"\">Please select an option</option>")
