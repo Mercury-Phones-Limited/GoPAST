@@ -80,7 +80,7 @@ func main() {
 		fmt.Fprintf(w, "  <label for=\"subnet_prefix\"><b>Subnet prefix (Required)</b></label>")
 		fmt.Fprintf(w, "  <br>")
 		fmt.Fprintf(w, "    <select id=\"subnet_prefix\" name=\"subnet_prefix\">")
-		fmt.Fprintf(w, "      <option value=\"\"></option>")
+		fmt.Fprintf(w, "      <option value=\"\">maintain the same IP subnet or prifix</option>")
 		fmt.Fprintf(w, "      <option value=\"32\">32</option>")
 		fmt.Fprintf(w, "      <option value=\"31\">31</option>")
 		fmt.Fprintf(w, "      <option value=\"29\">29</option>")
