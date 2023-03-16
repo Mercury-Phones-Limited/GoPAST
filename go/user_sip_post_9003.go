@@ -69,7 +69,7 @@ func main() {
 		fmt.Fprintf(w, "<form method=\"POST\" action=\"/order-sip\">")
 		fmt.Fprintf(w, "  <label><b>SIP username<br>(Required, No Spaces)</b></label>")
 		fmt.Fprintf(w, "  <br>")
-		fmt.Fprintf(w, "  <input name=\"username\" type=\"text\" value=\"\" />")
+		fmt.Fprintf(w, "  <input name=\"username\" type=\"text\" value=\"\" placeholder=\"e.g., myusername\"/>")
 		fmt.Fprintf(w, "  <br>")
 		fmt.Fprintf(w, "  <br>")
 		fmt.Fprintf(w, "  <label><b>IP address (Required)</b></label>")
