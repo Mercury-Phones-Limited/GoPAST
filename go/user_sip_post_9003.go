@@ -54,7 +54,7 @@ func main() {
 		fmt.Fprintf(w, "&nbsp &nbsp &nbsp")
 		fmt.Fprintf(w, "<a href=\"https://"+domainName+"/user-sip-registration\" class=\"sipbutton\">SIP Registration</a>")
 		fmt.Fprintf(w, "&nbsp &nbsp &nbsp")
-		fmt.Fprintf(w, "<a href=\"https://"+domainName+"/oauth2/sign_out\" class=\"logoutbutton\">Logout</a>")
+		fmt.Fprintf(w, "<a href=\"#\" onclick=\"window.close('https://"+domainName+"'); window.open('https://"+domainName+"/oauth2/sign_out'); window.open('https://github.com/logout');\" class=\"logoutbutton\"> Logout</a>")
 		fmt.Fprintf(w, "&nbsp &nbsp &nbsp")
 		fmt.Fprintf(w, "<br>")
 		fmt.Fprintf(w, "<br>")
