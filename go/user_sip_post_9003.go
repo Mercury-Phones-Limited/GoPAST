@@ -74,7 +74,7 @@ func main() {
 		fmt.Fprintf(w, "  <br>")
 		fmt.Fprintf(w, "  <label><b>IP address (Required)</b></label>")
 		fmt.Fprintf(w, "  <br>")
-		fmt.Fprintf(w, "  <input name=\"ip\" type=\"text\" value=\"\" />")
+		fmt.Fprintf(w, "  <input name=\"ip\" type=\"text\" value=\"\" placeholder=\"e.g., 192.168.0.1\"/>")
 		fmt.Fprintf(w, "  <br>")
 		fmt.Fprintf(w, "  <br>")
 		fmt.Fprintf(w, "  <label for=\"subnet_prefix\"><b>IP subnet or prefix (Required)</b></label>")
