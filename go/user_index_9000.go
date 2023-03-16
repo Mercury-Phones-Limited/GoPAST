@@ -52,7 +52,7 @@ func main() {
                 fmt.Fprintf(w, "<br>")
 		fmt.Fprintf(w, "<table>")
 		fmt.Fprintf(w, "  <tr>")
-		fmt.Fprintf(w, "    <th><h1>"+companyName+"</h1></th>")
+		fmt.Fprintf(w, "    <th><h1>  "+companyName+"  </h1></th>")
 		fmt.Fprintf(w, "  </tr>")
 		fmt.Fprintf(w, "</table>")
 		fmt.Fprintf(w, "<br>")
