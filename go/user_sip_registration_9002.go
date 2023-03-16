@@ -89,10 +89,15 @@ func main() {
 		}
 
 		fmt.Fprintf(w, startHTML)
-		fmt.Fprintf(w, "<a href=\"https://"+domainName+"/\" class=\"sipbutton\">Main Menu</a> &nbsp &nbsp &nbsp")
-                fmt.Fprintf(w, "<a href=\"https://"+domainName+"/user-sip-detail\" class=\"sipbutton\">SIP Detail</a> &nbsp &nbsp &nbsp")
-                fmt.Fprintf(w, "<a href=\"https://"+domainName+"/user-sip-post\" class=\"addalterbutton\">Add / Alter SIP</a> &nbsp &nbsp &nbsp")
+		fmt.Fprintf(w, "&nbsp &nbsp &nbsp")
+		fmt.Fprintf(w, "<a href=\"https://"+domainName+"/\" class=\"sipbutton\">Main Menu</a>")
+                fmt.Fprintf(w, "&nbsp &nbsp &nbsp")
+		fmt.Fprintf(w, "<a href=\"https://"+domainName+"/user-sip-detail\" class=\"sipbutton\">SIP Detail</a>")
+                fmt.Fprintf(w, "&nbsp &nbsp &nbsp")
+		fmt.Fprintf(w, "<a href=\"https://"+domainName+"/user-sip-post\" class=\"addalterbutton\">Add / Alter SIP</a>")
+		fmt.Fprintf(w, "&nbsp &nbsp &nbsp")
 		fmt.Fprintf(w, "<a href=\"https://"+domainName+"/oauth2/sign_out\" class=\"logoutbutton\">Logout</a>")
+		fmt.Fprintf(w, "&nbsp &nbsp &nbsp")
 		fmt.Fprintf(w, "<br>")
 		fmt.Fprintf(w, "<br>")
 		fmt.Fprintf(w, "<br>")
