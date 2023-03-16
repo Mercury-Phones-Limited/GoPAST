@@ -87,7 +87,7 @@ func main() {
                 fmt.Fprintf(w, "<br>")
                 fmt.Fprintf(w, "<div>")
                 fmt.Fprintf(w, "<a href=\"https://"+domainName+"/oauth2/sign_out\" class=\"wlogout\"><h2>Logout</h2></a> &nbsp &nbsp &nbsp")
-		fmt.Fprintf(w, "<a href=\"#\" onclick=\"window.open('https://"+domainName+"/oauth2/sign_out'); window.open('https://github.com/logout');\">Logout</a>")
+		fmt.Fprintf(w, "<a href=\"#\" onclick=\"window.close('https://"+domainName+"/oauth2/sign_out'); window.open('https://github.com/logout');\">Logout</a>")
 		fmt.Fprintf(w, "</div>")
                 fmt.Fprintf(w, "<br>")
                 fmt.Fprintf(w, endHTML)
