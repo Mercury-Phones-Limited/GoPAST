@@ -10,10 +10,6 @@
 
 <br>
 
-### GoPAST is a multi-tenant VoIP SIP trunk server that runs on Debian (but also with changes can run on other GNU/Linux distributions and FreeBSD), uses Asterisk as its SIP server and Go to provide a web interface.
-
-<br>
-
 ### The GoPAST projects goal is to make a stable and minimalist SIP Trunk server that can be easly managed by a web interface written in Go.
 
 ### The GoPAST VoIP server is also designed with modularity in mind, each webpage runs as a seprate go executable.
