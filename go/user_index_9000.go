@@ -62,7 +62,7 @@ func main() {
                 fmt.Fprintf(w, "<div>")
                 fmt.Fprintf(w, "&nbsp &nbsp &nbsp <a href=\"https://"+domainName+"/user-sip-detail\" class=\"zsip\"><h2>SIP Details</h2></a> &nbsp &nbsp &nbsp")
                 fmt.Fprintf(w, "<a href=\"https://"+domainName+"/user-sip-registration\" class=\"zsip\"><h2>SIP Registration</h2></a>")
-                fmt.Fprintf(w, "<a href=\"https://"+domainName+"/user-sip-post\" class=\"xaddalter\"><h2>Add / Alter SIP</h2></a>")
+                fmt.Fprintf(w, "<a href=\"https://"+domainName+"/user-sip-post\" class=\"xaddalter\"><h2>Add / Alter SIP</h2></a> &nbsp &nbsp &nbsp")
                 fmt.Fprintf(w, "</div>")
                 fmt.Fprintf(w, "<br>")
                 fmt.Fprintf(w, "<br>")
